@@ -23,7 +23,7 @@
 
 ## Technologies used outside the project
 
-- Docker
+- Docker Compose
 - insominia
 - Beekeeper
 
@@ -37,15 +37,7 @@
 - Clone this repository
 
 ```shell
-git clone https://github.com/guilhermelinosx/api-easy-sales.git
-```
-
-</br>
-
-- Create a PostgreSQL Container using Docker
-
-```shell
-docker container create --name api-easy-sales -e POSTGRES_PASSWORD=postgres -p 5432:5432 postgres
+git clone https://github.com/guilhermelinosp/api-sales.git
 ```
 
 </br>
@@ -53,26 +45,16 @@ docker container create --name api-easy-sales -e POSTGRES_PASSWORD=postgres -p 5
 - Start the Container
 
 ```shell
-docker container start api-easy-sales
+docker compose up --build
 ```
 
 </br>
 
 - Stop the Container
 
-```shell
-docker container stop api-easy-sales
-```
-
-</br>
-
-- Start the Application in Development
+	- To stop the Container click CTRL+C in your terminal and then type
 
 ```shell
-yarn install
-yarn dev
+docker ccompose down
 ```
 
-</br>
-
-- To stop the Application click CTRL+C in your terminal
