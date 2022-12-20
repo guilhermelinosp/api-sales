@@ -4,22 +4,22 @@ import { ICustomer } from '../models/ICustomer'
 import { CustomerRepository } from '../repositories/CustomerRepository'
 
 export class CreateCustomerService {
-  constructor(private readonly customerRepository = CustomerRepository) {}
+	constructor(private readonly customerRepository = CustomerRepository) {}
 
-  public async execute({ name, email }: ICreateCustomer): Promise<ICustomer> {
-    const customerCheckEmail = await this.customerRepository.findByEmail(email)
+	public async execute({ name, email }: ICreateCustomer): Promise<ICustomer> {
+		const customerCheckEmail = await this.customerRepository.findByEmail(email)
 
-    if (customerCheckEmail != null) {
-      throw new InternalApiError('There is already one customer with this email')
-    }
+		if (customerCheckEmail != null) {
+			throw new InternalApiError('There is already one customer with this email')
+		}
 
-    const customer = this.customerRepository.create({
-      name,
-      email
-    })
+		const customer = this.customerRepository.create({
+			name,
+			email
+		})
 
-    await this.customerRepository.save(customer)
+		await this.customerRepository.save(customer)
 
-    return customer
-  }
+		return customer
+	}
 }

@@ -1,3 +1,3 @@
 export interface IReadByIdOrder {
-  id: string
+	id: string
 }

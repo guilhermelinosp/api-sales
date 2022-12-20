@@ -13,38 +13,38 @@ ProductRouter.use(isRateLimiter)
 ProductRouter.get('/', productController.read)
 
 ProductRouter.post(
-  '/',
-  celebrate({
-    [Segments.BODY]: {
-      name: Joi.string().required(),
-      price: Joi.number().precision(2).required(),
-      quantity: Joi.number().required()
-    }
-  }),
-  productController.create
+	'/',
+	celebrate({
+		[Segments.BODY]: {
+			name: Joi.string().required(),
+			price: Joi.number().precision(2).required(),
+			quantity: Joi.number().required()
+		}
+	}),
+	productController.create
 )
 
 ProductRouter.put(
-  '/:id',
-  celebrate({
-    [Segments.PARAMS]: {
-      id: Joi.string().uuid().required()
-    },
-    [Segments.BODY]: {
-      name: Joi.string().optional(),
-      price: Joi.number().precision(2).optional(),
-      quantity: Joi.number().optional()
-    }
-  }),
-  productController.update
+	'/:id',
+	celebrate({
+		[Segments.PARAMS]: {
+			id: Joi.string().uuid().required()
+		},
+		[Segments.BODY]: {
+			name: Joi.string().optional(),
+			price: Joi.number().precision(2).optional(),
+			quantity: Joi.number().optional()
+		}
+	}),
+	productController.update
 )
 
 ProductRouter.delete(
-  '/:id',
-  celebrate({
-    [Segments.PARAMS]: {
-      id: Joi.string().uuid().required()
-    }
-  }),
-  productController.delete
+	'/:id',
+	celebrate({
+		[Segments.PARAMS]: {
+			id: Joi.string().uuid().required()
+		}
+	}),
+	productController.delete
 )

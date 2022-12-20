@@ -19,18 +19,18 @@ import { AddOrderIdToOrdersProducts1669810267546 } from './migrations/1669810267
 import { AddProductIdToOrdersProducts1669810632033 } from './migrations/1669810632033-AddProductIdToOrdersProducts'
 
 export const dataSource = new DataSource({
-  type: 'postgres',
-  url: process.env.DATABASE_URL ?? 'postgres://postgres:postgres@localhost:5432/postgres',
-  entities: [Users, UserToken, Products, Customers, Orders, OrdersProducts],
-  migrations: [
-    CreateUsers1668710339866,
-    UserTokens1664193700744,
-    CreateProducts1607437608841,
-    CreateCustomers1669799725480,
-    CreateOrders1669809127253,
-    AddCustomerIdToOrders1669809547781,
-    CreateOrdersProducts1669810082262,
-    AddOrderIdToOrdersProducts1669810267546,
-    AddProductIdToOrdersProducts1669810632033
-  ]
+	type: 'postgres',
+	url: process.env.DATABASE_URL ?? 'postgres://postgres:postgres@db:5432/postgres',
+	entities: [Users, UserToken, Products, Customers, Orders, OrdersProducts],
+	migrations: [
+		CreateUsers1668710339866,
+		UserTokens1664193700744,
+		CreateProducts1607437608841,
+		CreateCustomers1669799725480,
+		CreateOrders1669809127253,
+		AddCustomerIdToOrders1669809547781,
+		CreateOrdersProducts1669810082262,
+		AddOrderIdToOrdersProducts1669810267546,
+		AddProductIdToOrdersProducts1669810632033
+	]
 })

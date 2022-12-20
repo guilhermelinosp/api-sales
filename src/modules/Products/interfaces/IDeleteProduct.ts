@@ -1,3 +1,3 @@
 export interface IDeleteProduct {
-  id: string
+	id: string
 }

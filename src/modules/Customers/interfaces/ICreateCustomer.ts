@@ -1,4 +1,4 @@
 export interface ICreateCustomer {
-  name: string
-  email: string
+	name: string
+	email: string
 }

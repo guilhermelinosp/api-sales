@@ -1,4 +1,4 @@
 export interface IResetPasswordUser {
-  password: string
-  token: string
+	password: string
+	token: string
 }

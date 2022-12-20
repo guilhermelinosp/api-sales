@@ -19,17 +19,17 @@ app.use(cors())
 app.use(router)
 
 app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
-  if (err instanceof InternalApiError) {
-    return res.status(400).json({
-      status: 'error',
-      message: err.message
-    })
-  }
+	if (err instanceof InternalApiError) {
+		return res.status(400).json({
+			status: 'error',
+			message: err.message
+		})
+	}
 
-  console.error(err)
+	console.error(err)
 
-  return res.status(500).json({
-    status: 'error',
-    message: 'Internal Server Error'
-  })
+	return res.status(500).json({
+		status: 'error',
+		message: 'Internal Server Error'
+	})
 })

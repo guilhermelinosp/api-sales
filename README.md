@@ -9,7 +9,6 @@
 
 ![image 1](/.github/image.png)
 
-
 </div>
 
 </br>
@@ -30,7 +29,7 @@
 
 ## Technologies used to deploy
 
-- Heroku  | API
+- Heroku | API
 - Railway | Database
 
 ## How to run the project

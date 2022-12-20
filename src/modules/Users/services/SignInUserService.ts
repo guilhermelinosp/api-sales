@@ -6,25 +6,25 @@ import { IUser } from '../models/IUser'
 import { UserRepository } from '../repositories/UserRepository'
 
 interface IResponse {
-  user: IUser
-  token: string
+	user: IUser
+	token: string
 }
 
 export class SignInUserService {
-  constructor(private readonly userRepository = UserRepository) {}
+	constructor(private readonly userRepository = UserRepository) {}
 
-  public async execute({ email, password }: ISignInUser): Promise<IResponse> {
-    const user = await this.userRepository.findByEmail(email)
+	public async execute({ email, password }: ISignInUser): Promise<IResponse> {
+		const user = await this.userRepository.findByEmail(email)
 
-    if (user == null || !(await compare(password, user.password))) {
-      throw new InternalApiError('Incorrect email/password combination.')
-    }
+		if (user == null || !(await compare(password, user.password))) {
+			throw new InternalApiError('Incorrect email/password combination.')
+		}
 
-    const token = sign({}, process.env.JWT_SECRET as string, {
-      subject: user.id,
-      expiresIn: '1d'
-    })
+		const token = sign({}, process.env.JWT_SECRET as string, {
+			subject: user.id,
+			expiresIn: process.env.JWT_EXPIRES_IN as string
+		})
 
-    return { user, token }
-  }
+		return { user, token }
+	}
 }

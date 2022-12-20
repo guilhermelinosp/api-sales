@@ -1,3 +1,3 @@
 export interface IReadByIdUser {
-  id: string
+	id: string
 }

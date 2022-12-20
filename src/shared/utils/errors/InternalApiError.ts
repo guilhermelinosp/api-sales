@@ -1,7 +1,7 @@
 export class InternalApiError {
-  public readonly message: string
+	public readonly message: string
 
-  constructor(message: string) {
-    this.message = message
-  }
+	constructor(message: string) {
+		this.message = message
+	}
 }

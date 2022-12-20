@@ -1,13 +1,8 @@
-.idea
-.vscode
-node_modules
-build
-tmp
-temp
-dist
 *.log
 dist
 build
-package-lock.json
 node_modules
+coverage
+*.lock
 .env
+.docker/data
