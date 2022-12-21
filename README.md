@@ -22,11 +22,6 @@
 - insominia
 - Beekeeper
 
-## Technologies used to deploy
-
-- Heroku | API
-- Railway | Database
-
 ## How to run the project
 
 - Clone this repository
@@ -47,6 +42,6 @@ docker compose up --build
 	- To stop the Container click CTRL+C in your terminal and then type
 
 ```shell
-docker ccompose down
+docker compose down
 ```
 
