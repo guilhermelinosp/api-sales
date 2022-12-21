@@ -34,16 +34,12 @@
 ```shell
 git clone https://github.com/guilhermelinosp/api-sales.git
 ```
-
-</br>
-
 - Start the Container
 
 ```shell
 docker compose up --build
 ```
 - Stop the Container
-
 	- To stop the Container click CTRL+C in your terminal and then type
 
 ```shell
