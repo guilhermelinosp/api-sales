@@ -1,4 +1,4 @@
-# <div align="center"> API Easy Sales </div>
+# <div align="center"> API Sales </div>
 
 </br>
 
