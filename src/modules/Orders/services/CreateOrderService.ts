@@ -28,7 +28,7 @@ export class CreateOrderService {
 		const existsProductsIds = existsProducts.map((product: { id: string }) => product.id)
 
 		const checkInexistentProducts = products.filter(
-			product => !existsProductsIds.includes(product.id)
+			(product) => !existsProductsIds.includes(product.id)
 		)
 
 		if (checkInexistentProducts.length > 0) {
@@ -36,7 +36,7 @@ export class CreateOrderService {
 		}
 
 		const quantityAvailable = products.filter(
-			product =>
+			(product) =>
 				existsProducts.filter((p: { id: string }) => p.id === product.id)[0].quantity <
 				product.quantity
 		)
@@ -47,7 +47,7 @@ export class CreateOrderService {
 			)
 		}
 
-		const serializedProducts = products.map(product => ({
+		const serializedProducts = products.map((product) => ({
 			product_id: product.id,
 			quantity: product.quantity,
 			price: existsProducts.filter((p: { id: string }) => p.id === product.id)[0].price

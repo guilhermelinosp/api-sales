@@ -8,6 +8,6 @@ dataSource
 			console.log(`Server is running`)
 		})
 	})
-	.catch(err => {
+	.catch((err) => {
 		console.error('Error during initialization', err)
 	})

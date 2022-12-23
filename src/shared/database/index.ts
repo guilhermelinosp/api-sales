@@ -1,6 +1,5 @@
 import { DataSource } from 'typeorm'
 import 'dotenv/config'
-
 import { Users } from './entities/Users'
 import { UserToken } from './entities/UserToken'
 import { Products } from './entities/Products'
@@ -20,7 +19,7 @@ import { AddProductIdToOrdersProducts1669810632033 } from './migrations/16698106
 
 export const dataSource = new DataSource({
 	type: 'postgres',
-	url: process.env.DATABASE_URL ?? 'postgres://postgres:postgres@db:5432/postgres',
+	url: process.env.DATABASE_URL,
 	entities: [Users, UserToken, Products, Customers, Orders, OrdersProducts],
 	migrations: [
 		CreateUsers1668710339866,
@@ -32,5 +31,6 @@ export const dataSource = new DataSource({
 		CreateOrdersProducts1669810082262,
 		AddOrderIdToOrdersProducts1669810267546,
 		AddProductIdToOrdersProducts1669810632033
-	]
+	],
+	synchronize: true
 })

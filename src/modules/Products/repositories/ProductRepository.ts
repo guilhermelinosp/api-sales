@@ -18,7 +18,7 @@ export const ProductRepository = dataSource.getRepository(Products).extend({
 	},
 
 	async findAllByIds(products: IFindAllByIds[]): Promise<Products[] | null> {
-		const productIds = products.map(product => product.id)
+		const productIds = products.map((product) => product.id)
 
 		const productIdsCheck = await this.find({ where: { id: In(productIds) } })
 

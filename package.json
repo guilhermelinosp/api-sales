@@ -1,11 +1,12 @@
 {
 	"name": "api-sales",
 	"version": "1.0.0",
+	"main": "index.js",
 	"license": "MIT",
 	"repository": "https://github.com/guilhermelinosp/api-sales.git",
-	"author": "Guilherme Lino <guilhermelinosx@gmail.com>",
+	"author": "Guilherme Lino <guilhermelinosp@gmail.com>",
 	"scripts": {
-		"start:dev": "nodemon --watch './' --exec 'ts-node --transpile-only src/shared/server/index.ts' -e ts,tsx,json,js,jsx",
+		"start:dev": "nodemon --watch './' --exec 'ts-node --transpile-only src/shared/server/index.ts' -e .",
 		"start:prod": "node dist/shared/server/index.js",
 		"prebuild": "rimraf dist",
 		"build": "tsc -p tsconfig.build.json",

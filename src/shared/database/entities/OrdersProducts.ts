@@ -16,11 +16,11 @@ export class OrdersProducts implements IOrderProducts {
 	@PrimaryGeneratedColumn('uuid')
 	id: string
 
-	@ManyToOne(() => Orders, order => order.order_products)
+	@ManyToOne(() => Orders, (order) => order.order_products)
 	@JoinColumn({ name: 'order_id' })
 	order: Orders
 
-	@ManyToOne(() => Products, product => product.order_products)
+	@ManyToOne(() => Products, (product) => product.order_products)
 	@JoinColumn({ name: 'product_id' })
 	product: Products
 

@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import { compare } from 'bcryptjs'
 import { sign } from 'jsonwebtoken'
 import { InternalApiError } from '../../../shared/utils/errors/InternalApiError'
