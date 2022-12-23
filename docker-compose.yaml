@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  api:
+  app:
     build: .
     restart: always
     container_name: api

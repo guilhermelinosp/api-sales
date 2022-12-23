@@ -1,6 +1,6 @@
-**/node_modules
-**/dist
-**/build
+node_modules
+dist
+build
+yarn.lock
 Dockerfile
-docker-compose.yaml
-.docker
+docker-compose.yml

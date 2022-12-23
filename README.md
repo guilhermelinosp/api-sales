@@ -23,21 +23,16 @@
 
 ## Technologies used outside the project
 
-- Docker
+- Docker Compose
 - insominia
 - Beekeeper
-
-## Technologies used to deploy
-
-- Heroku | API
-- Railway | Database
 
 ## How to run the project
 
 - Clone this repository
 
 ```shell
-git clone https://github.com/guilhermelinosx/api-easy-sales.git
+git clone https://github.com/guilhermelinosp/api-sales.git
 ```
 
 </br>

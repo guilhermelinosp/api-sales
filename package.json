@@ -1,16 +1,16 @@
 {
-	"name": "api-easy-sales",
+	"name": "api-sales",
 	"version": "1.0.0",
 	"license": "MIT",
-	"repository": "https://github.com/guilhermelinosx/api-easy-sales.git",
+	"repository": "https://github.com/guilhermelinosp/api-sales.git",
 	"author": "Guilherme Lino <guilhermelinosx@gmail.com>",
 	"scripts": {
-		"dev": "nodemon --watch './' --exec 'ts-node --transpile-only src/shared/server/index.ts' -e ts,tsx,json,js,jsx",
-		"start": "node dist/shared/server/index.js",
-		"build": "rimraf dist && tsc -p tsconfig.build.json",
+		"start:dev": "nodemon --watch './' --exec 'ts-node --transpile-only src/shared/server/index.ts' -e ts,tsx,json,js,jsx",
+		"start:prod": "node dist/shared/server/index.js",
+		"prebuild": "rimraf dist",
+		"build": "tsc -p tsconfig.build.json",
 		"commit": "cz",
 		"pre-commit": "lint-staged",
-		"prepare": "husky install",
 		"typeorm": "ts-node ./node_modules/typeorm/cli.js",
 		"fix": "prettier  --write . && eslint . --fix"
 	},
