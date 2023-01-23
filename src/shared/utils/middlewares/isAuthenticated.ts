@@ -19,7 +19,8 @@ export const isAuthenticated = (req: Request, _res: Response, next: NextFunction
 			id: sub as string
 		}
 
-		return next()
+		next()
+		return
 	} catch {
 		throw new InternalApiError('Invalid JWT Token.')
 	}
